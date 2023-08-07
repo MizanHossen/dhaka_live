@@ -1,5 +1,6 @@
 class Images {
   static const String logoWhite = 'assets/images/logo_white.png';
+  static const String logoBlack = 'assets/images/logoBlack.png';
   static const String adsImg = 'assets/images/ads_img.png';
   static const String image1 = 'assets/images/image1.png';
   static const String image2 = 'assets/images/image2.png';
@@ -14,4 +15,5 @@ class Images {
   static const String linkedinIcon = 'assets/icons/linkedin.png';
   static const String telegramIcon = 'assets/icons/telegram.png';
   static const String twitterIcon = 'assets/icons/twitter.png';
+  static const String helpCircle = 'assets/icons/help_circle.png';
 }
