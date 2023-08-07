@@ -11,7 +11,7 @@ class SocialIcon extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Image(
-        image: AssetImage("assets/icons/$imageName"),
+        image: AssetImage(imageName),
         width: 30,
         height: 30,
       ),

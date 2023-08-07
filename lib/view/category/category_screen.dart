@@ -1,11 +1,15 @@
+import 'package:dhaka_live/helpers/constants/constants.dart';
 import 'package:dhaka_live/widgets/category_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../helpers/constants/images.dart';
 
 class Category extends StatelessWidget {
   const Category({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     List catItemName = [
       "জাতীয়",
       "আন্তর্জাতিক",
@@ -20,21 +24,31 @@ class Category extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.black54,
-          title: const Text(
-            "Dhaka Live",
-            style: TextStyle(color: Colors.white),
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.notifications, color: Colors.white))
-          ]),
-      body: ListView.builder(
+        backgroundColor: Colors.black54,
+        title: Image.asset(
+          Images.logoWhite,
+          //height: 50,
+          width: size.width * 0.45,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.notifications_active,
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(top: kdefaultPadding),
+        child: ListView.builder(
           itemCount: catItemName.length,
           itemBuilder: (context, index) {
             return CategoryItem(text: catItemName[index].toString());
-          }),
+          },
+        ),
+      ),
     );
   }
 }

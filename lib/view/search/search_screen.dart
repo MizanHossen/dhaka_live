@@ -1,6 +1,7 @@
-import 'package:dhaka_live/helpers/constants/constants.dart';
 import 'package:dhaka_live/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import '../../helpers/constants/images.dart';
+import '../home/components/news_virtical_card.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -8,51 +9,36 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.black54,
-          title: const SearchField(hintext: "খেলা", icon: Icons.search)),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 100,
-              child: Row(
-                children: [
-                  const Expanded(
-                      flex: 1,
-                      child: Image(
-                        image: AssetImage("assets/images/person.jpg"),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(4),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: kPrimaryColor),
-                            child: const Text("খেলাধুলা",
-                                style: TextStyle(fontSize: 12)),
-                          ),
-                          const Text(
-                              "এমবাপ্পের কড়া জবাবের পর ভুল স্বিকার ফ্রান্সের ফুটবল-প্রধানের",
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w500)),
-                          const Text("১০ মিনিট আগে",
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12))
-                        ],
-                      )),
-                ],
+      // appBar: AppBar(
+      //   backgroundColor: Colors.black54,
+      //   title: const SearchField(hintext: "খেলা", icon: Icons.search),
+      // ),
+      body: CustomScrollView(
+        slivers: [
+          const SliverAppBar(
+            floating: true,
+            backgroundColor: Colors.black54,
+            title: SearchField(hintext: "খেলা", icon: Icons.search),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemCount: 30,
+                itemBuilder: (context, index) {
+                  return const NewsVirticalCard(
+                    category: "আন্তুর্জাতিক",
+                    title: "আসামে বন্যায় মৃত্যু ৭০ জনের, গৃহহীন ৩০ লাখের বেশি",
+                    time: "১০ মিনিট আগে",
+                    imageName: Images.image2,
+                  );
+                },
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
