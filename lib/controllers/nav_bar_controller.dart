@@ -10,7 +10,7 @@ class NavBarController extends GetxController {
     const Home(),
     const Category(),
     const Search(),
-    const Setting(),
+    Setting(),
   ].obs;
 
   void updateSelectedIndex(int index) {

@@ -24,6 +24,7 @@ class Category extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black54,
         title: Image.asset(
           Images.logoWhite,

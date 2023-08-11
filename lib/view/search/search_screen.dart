@@ -16,6 +16,7 @@ class Search extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
+            automaticallyImplyLeading: false,
             floating: true,
             backgroundColor: Colors.black54,
             title: SearchField(hintext: "খেলা", icon: Icons.search),

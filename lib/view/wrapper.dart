@@ -1,14 +1,8 @@
-import 'package:dhaka_live/helpers/constants/constants.dart';
-import 'package:dhaka_live/view/home/home_screen.dart';
-import 'package:dhaka_live/view/login/login_screen.dart';
-import 'package:dhaka_live/view/screen1.dart';
-import 'package:dhaka_live/view/search/search_screen.dart';
-import 'package:dhaka_live/view/settings/setting_screen.dart';
+import 'package:dhaka_live/controllers/wrapper_controller.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../helpers/size_config/size_config.dart' show ScreenSize;
-import 'category/category_screen.dart';
-import 'nav_bar/nav_bar_screen.dart';
+import '../helpers/user_service/user_service.dart';
 
 class Wrapper extends StatelessWidget {
   final ScreenSize _sizeConfig = ScreenSize();
@@ -17,7 +11,14 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final WrapperController wrapperController = Get.put(WrapperController());
+    UserService userService = UserService();
+
+    wrapperController.authCheck(context);
+
+    // ignore: unused_local_variable
+    var isUser = userService.getBool();
     _sizeConfig.init(context);
-    return const LoginScreen();
+    return Container();
   }
 }

@@ -11,7 +11,7 @@ class SettingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.sizeOf(context).height * 0.06,
         child: Column(
           children: [

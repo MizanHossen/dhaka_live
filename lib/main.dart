@@ -1,7 +1,7 @@
 import 'package:dhaka_live/helpers/constants/constants.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_easyloading/flutter_easyloading.dart' show EasyLoading;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'view/wrapper.dart' show Wrapper;
@@ -10,7 +10,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(
-    Main(),
+    const Main(),
   );
 }
 

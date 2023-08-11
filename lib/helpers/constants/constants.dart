@@ -56,7 +56,7 @@ Map<String, String> headers = {
 //*********************************************** Colors *************************** */
 
 const kPrimaryColor = Color(0xffF1582C);
-Color kMidPrimaryColor = Color(0xffF1582C).withOpacity(0.10);
+Color kMidPrimaryColor = const Color(0xffF1582C).withOpacity(0.10);
 const kSecounderyColor = Color(0xff494949);
 
 const kBlackColor = Color(0xff0F0E0E);
@@ -69,11 +69,12 @@ const kPrimaryTextColor = Color(0xff0F0E0E);
 const kSecounderyTextColor = Color(0xff494949);
 const kBlackTextColor = Color(0xff000000);
 const kWhiteTextColor = Color(0xffFFFFFF);
+const kTextFieldColor = Color(0xfff6f6f6);
 
 const kDividerColor = Color(0xffE4E4E4);
 const kActiveStatus = Color(0xff22C375);
 const kShadowColor = Color(0xffF4F2EC);
-Color ksubtitleColor = Color(0xff494A4B).withOpacity(0.4);
+Color ksubtitleColor = const Color(0xff494A4B).withOpacity(0.4);
 
 // final kdefaultPadding = SizeBuilder().setSp(20);
 final kdefaultPadding = 20.r;

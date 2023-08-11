@@ -39,10 +39,9 @@ class CustomTextField extends StatelessWidget {
       // enabled: widget.readOnly,
       controller: controller,
       decoration: InputDecoration(
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 14).copyWith(left: 15),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.r).copyWith(left: 15),
         filled: true,
-        fillColor: kSeconderyBgColor,
+        fillColor: kTextFieldColor,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         labelText: labelText,
         labelStyle: kTitleTextstyle.copyWith(color: Colors.black),
